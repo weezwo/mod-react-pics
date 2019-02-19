@@ -6,6 +6,11 @@ class ImageCard extends React.Component {
 
     this.imageRef = React.createRef();
   }
+
+  componentDidMount() {
+    console.log(this.imageRef.current.clientHeight) // This will be zero! We have refs, but data hasn't loaded by the time this is called
+  }
+
   render() {
     const { description, urls } = this.props.image
     return (
